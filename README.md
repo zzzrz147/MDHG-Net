@@ -1,6 +1,5 @@
 # MDHG-Net
 
-Python 3.9 · TensorFlow 2.9.1.
 
 MDHG-Net combines multi-scale temporal encoding, dynamic hypergraph learning, and cross-scale propagation to forecast recorded electricity generation minus actual load. A Gaussian output head and MC Dropout estimate predictive uncertainty.
 
