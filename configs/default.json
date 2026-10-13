@@ -1,0 +1,174 @@
+{
+  "model": "MDHG-Net",
+  "target": "balance",
+  "seq_len": 72,
+  "forecast_horizons": [
+    12
+  ],
+  "window_size": [
+    1,
+    12,
+    24
+  ],
+  "d_model": 64,
+  "gru_hidden": 64,
+  "dropout": 0.3,
+  "scale_se_reduction": 4,
+  "hyper_num": [
+    6,
+    6,
+    6
+  ],
+  "incidence_thresholds": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "variance_epsilon": 1e-06,
+  "dynamic_scale_weights": true,
+  "dynamic_hypergraph": true,
+  "cross_scale": true,
+  "interaction": "hypergraph",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.001,
+  "batch_size": 64,
+  "train_epochs": 200,
+  "patience": 20,
+  "grad_clip": null,
+  "mc_passes": 50,
+  "seed": 2025,
+  "experiment_seeds": [
+    2025,
+    2026,
+    2027,
+    2028,
+    2029
+  ],
+  "input_columns": [
+    "generation biomass",
+    "generation fossil brown coal/lignite",
+    "generation fossil gas",
+    "generation fossil hard coal",
+    "generation fossil oil",
+    "generation hydro pumped storage consumption",
+    "generation hydro run-of-river and poundage",
+    "generation hydro water reservoir",
+    "generation nuclear",
+    "generation other",
+    "generation other renewable",
+    "generation solar",
+    "generation waste",
+    "generation wind onshore",
+    "generation coal all",
+    "temp_Barcelona",
+    "pressure_Barcelona",
+    "humidity_Barcelona",
+    "wind_speed_Barcelona",
+    "wind_deg_Barcelona",
+    "rain_1h_Barcelona",
+    "clouds_all_Barcelona",
+    "total generation",
+    "total load actual"
+  ],
+  "energy_columns": [
+    "generation biomass",
+    "generation fossil brown coal/lignite",
+    "generation fossil gas",
+    "generation fossil hard coal",
+    "generation fossil oil",
+    "generation hydro pumped storage consumption",
+    "generation hydro run-of-river and poundage",
+    "generation hydro water reservoir",
+    "generation nuclear",
+    "generation other",
+    "generation other renewable",
+    "generation solar",
+    "generation waste",
+    "generation wind onshore",
+    "generation coal all",
+    "total generation",
+    "total load actual"
+  ],
+  "role_groups": {
+    "conventional_generation": [
+      "generation biomass",
+      "generation fossil brown coal/lignite",
+      "generation fossil gas",
+      "generation fossil hard coal",
+      "generation fossil oil",
+      "generation nuclear",
+      "generation other",
+      "generation waste",
+      "generation coal all"
+    ],
+    "renewable_generation": [
+      "generation other renewable",
+      "generation solar",
+      "generation wind onshore"
+    ],
+    "hydropower_and_pumping": [
+      "generation hydro pumped storage consumption",
+      "generation hydro run-of-river and poundage",
+      "generation hydro water reservoir"
+    ],
+    "aggregate_generation_and_load": [
+      "total generation",
+      "total load actual"
+    ],
+    "market": [],
+    "meteorological": [
+      "temp_Barcelona",
+      "pressure_Barcelona",
+      "humidity_Barcelona",
+      "wind_speed_Barcelona",
+      "wind_deg_Barcelona",
+      "rain_1h_Barcelona",
+      "clouds_all_Barcelona"
+    ]
+  },
+  "sampling_interval_hours": 1.0,
+  "temporal_anchor_len": 72,
+  "train_ratio": 0.8,
+  "val_ratio": 0.1,
+  "test_ratio": 0.1,
+  "loss": "gaussian_nll",
+  "repetitions": 5,
+  "confidence_levels": [
+    0.9,
+    0.95
+  ],
+  "low_balance_thresholds": [
+    500.0,
+    600.0,
+    700.0
+  ],
+  "low_balance_reference": 600.0,
+  "alarm_probability": 0.5,
+  "volatility_history_hours": 72,
+  "volatility_quantiles": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "encoder_kernel_size": 3,
+  "encoder_stride": 1,
+  "encoder_layers": 2,
+  "encoder_activation": "relu",
+  "interpolation_align_corners": false,
+  "gru_layers": 1,
+  "gru_dropout": 0.0,
+  "optimizer_betas": [
+    0.9,
+    0.999
+  ],
+  "optimizer_eps": 1e-08,
+  "lr_scheduler": "none",
+  "early_stop_min_delta": 0.0,
+  "num_workers": 0,
+  "pin_memory": false,
+  "train_drop_last": false,
+  "enforce_paper_settings": true,
+  "framework": "tensorflow",
+  "tensorflow_version": "2.9.1",
+  "python_version": "3.9"
+}

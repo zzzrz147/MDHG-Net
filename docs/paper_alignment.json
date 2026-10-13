@@ -1,0 +1,491 @@
+{
+  "code_version": "0.4.0",
+  "framework": "tensorflow",
+  "tensorflow_version": "2.9.1",
+  "python_version": "3.9",
+  "source_sha256": "2ef0d6da41b439e2d5eb966f1406e8daaa403b5f1094bef113669186a72314c2",
+  "source_archive_sha256": "41a66467c3312cead49ac91f64ef8a24787e62fe8c327577f9d8474dec3b68a1",
+  "settings": [
+    {
+      "setting": "sampling_interval_hours",
+      "configured": 1.0,
+      "paper": 1.0,
+      "source": "Eq. (6), Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "seq_len",
+      "configured": 72,
+      "paper": 72,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "temporal_anchor_len",
+      "configured": 72,
+      "paper": 72,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "d_model",
+      "configured": 64,
+      "paper": 64,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "dropout",
+      "configured": 0.3,
+      "paper": 0.3,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "optimizer",
+      "configured": "AdamW",
+      "paper": "AdamW",
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "learning_rate",
+      "configured": 0.001,
+      "paper": 0.001,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "weight_decay",
+      "configured": 0.001,
+      "paper": 0.001,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "batch_size",
+      "configured": 64,
+      "paper": 64,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "train_epochs",
+      "configured": 200,
+      "paper": 200,
+      "source": "Section 4.1, Table 2; maximum, not mandatory completion",
+      "status": "matches"
+    },
+    {
+      "setting": "patience",
+      "configured": 20,
+      "paper": 20,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "loss",
+      "configured": "gaussian_nll",
+      "paper": "gaussian_nll",
+      "source": "Eqs. (43)-(44), Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "mc_passes",
+      "configured": 50,
+      "paper": 50,
+      "source": "Section 4.1, Table 2",
+      "status": "matches"
+    },
+    {
+      "setting": "repetitions",
+      "configured": 5,
+      "paper": 5,
+      "source": "Section 4.1",
+      "status": "matches"
+    },
+    {
+      "setting": "train_ratio",
+      "configured": 0.8,
+      "paper": 0.8,
+      "source": "Table 2; applied by external dataset split",
+      "status": "external_contract"
+    },
+    {
+      "setting": "val_ratio",
+      "configured": 0.1,
+      "paper": 0.1,
+      "source": "Table 2; applied by external dataset split",
+      "status": "external_contract"
+    },
+    {
+      "setting": "test_ratio",
+      "configured": 0.1,
+      "paper": 0.1,
+      "source": "Table 2; applied by external dataset split",
+      "status": "external_contract"
+    },
+    {
+      "setting": "confidence_levels",
+      "configured": [
+        0.9,
+        0.95
+      ],
+      "paper": [
+        0.9,
+        0.95
+      ],
+      "source": "Section 4.1, Table 4",
+      "status": "matches"
+    },
+    {
+      "setting": "low_balance_thresholds",
+      "configured": [
+        500.0,
+        600.0,
+        700.0
+      ],
+      "paper": [
+        500.0,
+        600.0,
+        700.0
+      ],
+      "source": "Section 4.4, Table 7",
+      "status": "matches"
+    },
+    {
+      "setting": "low_balance_reference",
+      "configured": 600.0,
+      "paper": 600.0,
+      "source": "Section 4.4",
+      "status": "matches"
+    },
+    {
+      "setting": "alarm_probability",
+      "configured": 0.5,
+      "paper": 0.5,
+      "source": "Section 4.4",
+      "status": "matches"
+    },
+    {
+      "setting": "volatility_history_hours",
+      "configured": 72,
+      "paper": 72,
+      "source": "Section 4.5, Eq. (45)",
+      "status": "matches"
+    },
+    {
+      "setting": "volatility_quantiles",
+      "configured": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "paper": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "source": "Section 4.5",
+      "status": "matches"
+    },
+    {
+      "setting": "forecast_horizons",
+      "configured": [
+        12
+      ],
+      "paper": [
+        12,
+        24,
+        48,
+        72
+      ],
+      "source": "Sections 4.1 and 4.3; train each lead separately",
+      "status": "matches"
+    },
+    {
+      "setting": "window_size",
+      "configured": [
+        1,
+        12,
+        24
+      ],
+      "paper": [
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          12,
+          24
+        ],
+        [
+          1,
+          12,
+          24,
+          48
+        ],
+        [
+          1,
+          12,
+          24,
+          48,
+          72
+        ]
+      ],
+      "source": "Sections 4.1 and 4.3",
+      "status": "matches"
+    },
+    {
+      "setting": "incidence_thresholds",
+      "configured": [
+        0.05,
+        0.1,
+        0.15
+      ],
+      "paper": [
+        0.05,
+        0.1,
+        0.15
+      ],
+      "source": "Section 4.1, default three-scale setup",
+      "status": "matches"
+    },
+    {
+      "setting": "encoder_kernel_size",
+      "configured": 3,
+      "paper": null,
+      "source": "Convolution kernel size is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "encoder_stride",
+      "configured": 1,
+      "paper": null,
+      "source": "Convolution stride is not stated; 1 retains the finest resolution.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "encoder_layers",
+      "configured": 2,
+      "paper": null,
+      "source": "The number of convolution layers is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "encoder_activation",
+      "configured": "relu",
+      "paper": null,
+      "source": "The nonlinear activation delta is not named.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "interpolation_align_corners",
+      "configured": false,
+      "paper": null,
+      "source": "Linear interpolation is stated; align_corners is not.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "gru_hidden",
+      "configured": 64,
+      "paper": null,
+      "source": "A separate GRU hidden size is not stated; it is set to the latent size.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "gru_layers",
+      "configured": 1,
+      "paper": null,
+      "source": "The number of GRU layers is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "gru_dropout",
+      "configured": 0.0,
+      "paper": null,
+      "source": "Internal GRU dropout is not separately stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "scale_se_reduction",
+      "configured": 4,
+      "paper": null,
+      "source": "Excitation bottleneck size is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "hyper_num",
+      "configured": [
+        6,
+        6,
+        6
+      ],
+      "paper": null,
+      "source": "The number of candidate hyperedges at each scale is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "variance_epsilon",
+      "configured": 1e-06,
+      "paper": null,
+      "source": "Epsilon is positive; its numerical value is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "optimizer_betas",
+      "configured": [
+        0.9,
+        0.999
+      ],
+      "paper": null,
+      "source": "AdamW beta values are not stated; standard defaults are used.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "optimizer_eps",
+      "configured": 1e-08,
+      "paper": null,
+      "source": "AdamW epsilon is not stated; the standard default is used.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "lr_scheduler",
+      "configured": "none",
+      "paper": null,
+      "source": "Only initial learning rate is stated; no scheduler is specified.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "early_stop_min_delta",
+      "configured": 0.0,
+      "paper": null,
+      "source": "Early-stopping minimum improvement is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "grad_clip",
+      "configured": null,
+      "paper": null,
+      "source": "Gradient clipping is not stated and is disabled by default.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "num_workers",
+      "configured": 0,
+      "paper": null,
+      "source": "dataset batch worker count is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "pin_memory",
+      "configured": false,
+      "paper": null,
+      "source": "dataset batch pin_memory is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "train_drop_last",
+      "configured": false,
+      "paper": null,
+      "source": "Handling of the last incomplete batch is not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "experiment_seeds",
+      "configured": [
+        2025,
+        2026,
+        2027,
+        2028,
+        2029
+      ],
+      "paper": null,
+      "source": "Five seeds are required; their numerical values are not stated.",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "input_variable_count",
+      "configured": 24,
+      "paper": 23,
+      "source": "Section 3.1, Table 2; provided-column contract retained",
+      "status": "user_override"
+    },
+    {
+      "setting": "normalization",
+      "configured": "scale LayerNorm or caller-supplied training statistics",
+      "paper": "Norm, unspecified operator",
+      "source": "Eq. (7)",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "normalization_epsilon",
+      "configured": 1e-05,
+      "paper": null,
+      "source": "LayerNorm standard default; the manuscript does not specify its epsilon",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "zero_padding_side",
+      "configured": "oldest end, left",
+      "paper": null,
+      "source": "Eq. (4) defines padded length but not padding direction; no padding occurs in the default scale set",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "parameter_initialization",
+      "configured": "TensorFlow/Keras layer defaults, Xavier-uniform edge prototypes",
+      "paper": null,
+      "source": "Initialization distributions are not reported",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "sample_window_stride",
+      "configured": "external Dataset",
+      "paper": null,
+      "source": "No sliding-sample stride is specified; dataset creation is outside this package",
+      "status": "external_contract"
+    },
+    {
+      "setting": "hyperedge_weight_matrix",
+      "configured": "full learnable Ms x Ms, identity initialization",
+      "paper": "Wh in R^(Ms x Ms)",
+      "source": "Eq. (23); initialization is an implementation choice",
+      "status": "matches"
+    },
+    {
+      "setting": "hyperedge_weight_initialization",
+      "configured": "identity",
+      "paper": null,
+      "source": "Eq. (23) does not give initialization values",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "probabilistic_score_distribution",
+      "configured": "moment-matched Gaussian",
+      "paper": null,
+      "source": "Eq. (42) states Gaussian interval approximation; MC-mixture score details are not specified",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "MAPE_near_zero_handling",
+      "configured": "exclude abs(target)<=1e-6",
+      "paper": null,
+      "source": "MAPE is supplementary; the exact denominator treatment is not specified",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "PINAW_normalizer",
+      "configured": "evaluated target maximum minus minimum",
+      "paper": null,
+      "source": "The exact PINAW normalization definition is not reported",
+      "status": "implementation_choice"
+    },
+    {
+      "setting": "reported_seed_standard_deviation",
+      "configured": "sample standard deviation, ddof=1",
+      "paper": null,
+      "source": "Mean and standard deviation are reported, but ddof is not specified",
+      "status": "implementation_choice"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "python_version": "3.9.13",
+  "tensorflow_version": "2.9.1",
+  "keras_version": "2.9.0",
+  "device": "CPU",
+  "tests_passed": 30,
+  "fixed_weight_comparisons_passed": 6,
+  "fixed_weight_comparisons": [
+    {
+      "case": 0,
+      "maximum_absolute_error": {
+        "mu": 0.0,
+        "variance": 0.0
+      }
+    },
+    {
+      "case": 1,
+      "maximum_absolute_error": {
+        "mu": 7.450580596923828e-09,
+        "variance": 0.0
+      }
+    },
+    {
+      "case": 2,
+      "maximum_absolute_error": {
+        "mu": 7.450580596923828e-09,
+        "variance": 0.0
+      }
+    },
+    {
+      "case": 3,
+      "maximum_absolute_error": {
+        "mu": 7.450580596923828e-09,
+        "variance": 0.0
+      }
+    },
+    {
+      "case": 4,
+      "maximum_absolute_error": {
+        "mu": 7.450580596923828e-09,
+        "variance": 5.960464477539063e-08
+      }
+    },
+    {
+      "case": 5,
+      "maximum_absolute_error": {
+        "mu": 9.313225746154785e-09,
+        "variance": 0.0
+      }
+    }
+  ],
+  "synthetic_mc_passes": 50,
+  "dependency_resolution": "passed",
+  "package_wheel_build": "passed",
+  "gpu_tested": false,
+  "real_data_full_training_performed": false
+}
